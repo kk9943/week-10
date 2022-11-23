@@ -1,0 +1,21 @@
+Write a C++ program to demonstrate re throw exception within exception handler.
+#include <iostream>
+using namespace std;
+void exception() {
+try {
+throw 0;
+} catch (int i) {
+cout << "\nException Caught: Wrong Input :" << i;
+throw;
+}
+}
+int main() {
+int var = 0;
+try {
+exception();
+}
+catch (int ex) {
+cout << "\nException Caught: Wrong Input :" << ex;
+}
+return 0;
+}
