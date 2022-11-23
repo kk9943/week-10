@@ -1,0 +1,28 @@
+Write a C++ program to throw exception by catching object as parameter inside catch block.
+#include <iostream>
+using namespace std;
+class number
+{
+public:
+int x;
+};
+int main()
+{
+number obj;
+cout<<"Enter number \"1\": ";
+try
+{
+cin>>obj.x;
+if(obj.x!=1)
+{
+throw obj;
+}
+else
+cout<<"Correct number entered";
+}
+catch(number a)
+{
+cout<<"Error "<<a.x<<" was entered instead of \"1\"";
+}
+return 0;
+}
